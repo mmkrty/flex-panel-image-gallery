@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="hero">
+        <h1 class="header">Faces in Modern Chinese History</h1>
+    </div>
+    
+
     <div class="panels">
  
         <div class="panel panel1">
@@ -37,8 +42,43 @@
             <p>1906-1967</p>
             <p>Puyi</p>
         </div>
+        <div class="panel panel6">
+            <p>Feng</p>
+            <p>1882-1948</p>
+            <p>Yü-hsiang</p>
+        </div>
+        <div class="panel panel7">
+            <p>Yan</p>
+            <p>1883-1960</p>
+            <p>Xishan</p>
+        </div>
+        <div class="panel panel8">
+            <p>Li</p>
+            <p>1890-1969</p>
+            <p>Zongren</p>
+        </div>
  
     </div>
     
+
+
+<script>
+const panel = document.querySelectorAll(".panel");
+
+
+function toggleOpen(){
+    this.classList.toggle("open");
+}
+function toggleActive(e){
+    if(e.propertyName.includes("flex")){
+        this.classList.toggle("open-active");
+    }
+}
+
+panel.forEach(panel => panel.addEventListener("click", toggleOpen));
+panel.forEach(panel => panel.addEventListener("transitionend", toggleActive));
+
+
+</script>
 </body>
 </html>
